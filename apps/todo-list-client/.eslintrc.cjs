@@ -70,6 +70,18 @@ module.exports = {
             style: 'kebab-case',
           },
         ],
+        'import/extensions': [
+          'error',
+          'ignorePackages',
+          {
+            '': 'never',
+            ts: 'never',
+            tsx: 'never',
+            js: 'never',
+            jsx: 'never',
+            html: 'always',
+          },
+        ],
       },
     },
     {

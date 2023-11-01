@@ -26,18 +26,18 @@ export default class TasksController {
   @Get(':id')
   @ApiCreatedResponse({ type: Task })
   findOne(@Param('id') id: string) {
-    return this.tasksService.findOne(+id);
+    return this.tasksService.findOne(id);
   }
 
   @Patch(':id')
   @ApiCreatedResponse({ type: Task })
   update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
-    return this.tasksService.update(+id, updateTaskDto);
+    return this.tasksService.update(id, updateTaskDto);
   }
 
   @Delete(':id')
   @ApiCreatedResponse({ type: Task })
   remove(@Param('id') id: string) {
-    return this.tasksService.remove(+id);
+    return this.tasksService.remove(id);
   }
 }
