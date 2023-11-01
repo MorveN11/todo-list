@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  ignorePatterns: ['projects/**/*', 'dist/**/*', 'node_modules/**/*'],
+  ignorePatterns: ['.eslintrc.cjs', 'dist', 'node_modules', 'coverage', '.angular', 'projects'],
   plugins: ['simple-import-sort'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -26,7 +26,6 @@ module.exports = {
         'plugin:@angular-eslint/template/process-inline-templates',
         'prettier',
       ],
-      ignorePatterns: ['.eslintrc.cjs', 'dist', 'node_modules', 'coverage', '.angular'],
       rules: {
         'max-len': [
           'error',
@@ -90,7 +89,6 @@ module.exports = {
       files: ['*.html'],
       extends: ['plugin:@angular-eslint/template/recommended', 'plugin:tailwindcss/recommended', 'prettier'],
       plugins: ['tailwindcss', 'prettier'],
-      ignorePatterns: ['.eslintrc.cjs', 'dist', 'node_modules', 'coverage', '.angular'],
       rules: {
         'max-len': [
           'error',
