@@ -4,6 +4,7 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "dev": "docker compose down && docker volume rm --force todo-list-db_postgres-data && docker compose up -d"
+    "dev": "docker compose down && docker volume rm --force todo-list-db_postgres-data && docker compose up -d",
+    "start": "docker compose -f docker-compose-prod.yml down && docker compose -f docker-compose-prod.yml up -d"
   }
 }

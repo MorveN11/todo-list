@@ -13,13 +13,16 @@
     "test": {
       "cache": false
     },
-    "build": {
+    "prisma": {
+      "cache": false
+    },
+    "start": {
+      "cache": false,
       "dependsOn": [
         "^build"
-      ],
-      "outputs": [
-        "dist/**"
-      ],
+      ]
+    },
+    "build": {
       "cache": false
     }
   }

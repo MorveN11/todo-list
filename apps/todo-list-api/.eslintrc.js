@@ -47,5 +47,14 @@ module.exports = {
     'prettier/prettier': ['warn', {}, { usePrettierrc: true }],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+      },
+    ],
+    'class-methods-use-this': 'off',
   },
 };

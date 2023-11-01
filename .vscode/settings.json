@@ -18,7 +18,7 @@
   "plpgsqlLanguageServer.password": "password",
   "plpgsqlLanguageServer.host": "localhost",
   "plpgsqlLanguageServer.port": 3030,
-  "plpgsqlLanguageServer.database": "llama_gamer_db",
+  "plpgsqlLanguageServer.database": "todo_list_db",
   "plpgsqlLanguageServer.workspaceValidationTargetFiles": [
     "**/*.sql",
     "**/*.pgsql"
