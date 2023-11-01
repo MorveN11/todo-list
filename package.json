@@ -4,8 +4,8 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "dev": "turbo dev -F todo-list-db && turbo prisma -F todo-list-api && turbo dev -F todo-list-api -F todo-list-client",
     "prepare": "husky install",
+    "dev": "turbo dev -F todo-list-db && turbo prisma -F todo-list-api && turbo dev -F todo-list-api -F todo-list-client",
     "check:code": "turbo lint -F todo-list-client -F todo-list-api && turbo format -F todo-list-client -F todo-list-api",
     "build": "turbo build -F todo-list-client -F todo-list-api",
     "test": "turbo test -F todo-list-client -F todo-list-api",

@@ -18,7 +18,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js', 'dist', 'node_modules', 'src/generated', 'src/migrations'],
+  ignorePatterns: ['.eslintrc.js', 'dist', 'node_modules', 'prisma/generated', 'prisma/migrations', 'coverage'],
   rules: {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-misused-promises': 'off',

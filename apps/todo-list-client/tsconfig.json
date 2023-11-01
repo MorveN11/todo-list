@@ -38,6 +38,9 @@
     "src/**/*.ts",
     ".eslintrc.cjs",
     "tailwind.config.js",
-    "src/**/*.html"
+    "src/**/*.html",
+    "setup-jest.ts",
+    "jest.config.ts",
+    "test/**/*.ts",
   ]
 }

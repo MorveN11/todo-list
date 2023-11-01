@@ -4,7 +4,8 @@
     "tsconfig.json": "tsconfig.json, tsconfig.app.json, tsconfig.spec.json, tsconfig.build.json",
     ".eslintrc.js": ".eslintrc.js, .eslintignore, .prettierrc, .prettierignore",
     ".eslintrc.cjs": ".eslintrc.cjs, .eslintignore, .prettierrc, .prettierignore",
-    "package.json": "package.json, bun.lockb, .gitattributes, .gitignore"
+    "package.json": "package.json, bun.lockb, .gitattributes, .gitignore",
+    "jest.config.ts": "jest.config.ts, setup-jest.ts",
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,

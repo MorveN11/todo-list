@@ -10,21 +10,23 @@ module.exports = {
   },
   env: {
     browser: true,
-    jasmine: true,
+    jest: true,
     node: true,
   },
   overrides: [
     {
       files: ['*.ts'],
-      plugins: ['@typescript-eslint', 'prettier'],
+      plugins: ['@typescript-eslint', 'jest', 'prettier'],
       extends: [
         'airbnb-base',
         'airbnb-typescript/base',
         'plugin:@typescript-eslint/recommended',
+        'plugin:jest/recommended',
         'plugin:@angular-eslint/recommended',
         'plugin:@angular-eslint/template/process-inline-templates',
         'prettier',
       ],
+      ignorePatterns: ['.eslintrc.cjs', 'dist', 'node_modules', 'coverage', '.angular'],
       rules: {
         'max-len': [
           'error',
@@ -88,6 +90,7 @@ module.exports = {
       files: ['*.html'],
       extends: ['plugin:@angular-eslint/template/recommended', 'plugin:tailwindcss/recommended', 'prettier'],
       plugins: ['tailwindcss', 'prettier'],
+      ignorePatterns: ['.eslintrc.cjs', 'dist', 'node_modules', 'coverage', '.angular'],
       rules: {
         'max-len': [
           'error',
