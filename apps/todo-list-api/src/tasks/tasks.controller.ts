@@ -13,31 +13,31 @@ export default class TasksController {
 
   @Post()
   @ApiCreatedResponse({ type: Task })
-  create(@Body() createTaskDto: CreateTaskDto) {
+  async create(@Body() createTaskDto: CreateTaskDto) {
     return this.tasksService.create(createTaskDto);
   }
 
   @Get()
   @ApiCreatedResponse({ type: [Task] })
-  findAll() {
+  async findAll() {
     return this.tasksService.findAll();
   }
 
   @Get(':id')
   @ApiCreatedResponse({ type: Task })
-  findOne(@Param('id') id: string) {
+  async findOne(@Param('id') id: string) {
     return this.tasksService.findOne(id);
   }
 
   @Patch(':id')
   @ApiCreatedResponse({ type: Task })
-  update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
+  async update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
     return this.tasksService.update(id, updateTaskDto);
   }
 
   @Delete(':id')
   @ApiCreatedResponse({ type: Task })
-  remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string) {
     return this.tasksService.remove(id);
   }
 }

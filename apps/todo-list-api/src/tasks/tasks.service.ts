@@ -9,13 +9,13 @@ import UpdateTaskDto from './dto/update-task.dto';
 export default class TasksService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(createTaskDto: CreateTaskDto) {
+  async create(createTaskDto: CreateTaskDto) {
     return this.prisma.task.create({
       data: createTaskDto,
     });
   }
 
-  findAll() {
+  async findAll() {
     return this.prisma.task.findMany();
   }
 
@@ -29,11 +29,11 @@ export default class TasksService {
     return task;
   }
 
-  update(id: string, _updateTaskDto: UpdateTaskDto) {
+  async update(id: string, _updateTaskDto: UpdateTaskDto) {
     return `This action updates a #${id} task`;
   }
 
-  remove(id: string) {
+  async remove(id: string) {
     return `This action removes a #${id} task`;
   }
 }
