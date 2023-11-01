@@ -5,8 +5,14 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  extends: ['airbnb-base', 'airbnb-typescript/base'],
-  plugins: ['@typescript-eslint/eslint-plugin', 'jest', 'prettier'],
+  extends: [
+    'airbnb-base',
+    'airbnb-typescript/base',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
+    'prettier',
+  ],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'jest', 'prettier'],
   root: true,
   env: {
     node: true,
@@ -39,5 +45,7 @@ module.exports = {
       },
     ],
     'prettier/prettier': ['warn', {}, { usePrettierrc: true }],
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
 };

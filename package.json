@@ -2,14 +2,9 @@
   "name": "todo-list",
   "version": "0.1.0",
   "private": false,
-  "description": "Todo List app built with Turbo",
-  "author": {
-    "email": "morales.patty.jose@gmail.com",
-    "name": "Tutuma's Team"
-  },
   "license": "MIT",
   "scripts": {
-    "dev": "turbo dev",
+    "dev": "turbo dev -F todo-list-db && turbo dev -F todo-list-api -F todo-list-client",
     "prepare": "husky install",
     "check:code": "turbo lint -F todo-list-client -F todo-list-api && turbo format -F todo-list-client -F todo-list-api",
     "build": "turbo build -F todo-list-client -F todo-list-api",

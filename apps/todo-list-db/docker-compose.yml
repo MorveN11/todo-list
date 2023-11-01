@@ -1,7 +1,7 @@
 version: latest
 
 services:
-  postgres:
+  todo-postgres:
     image: postgres:latest
     container_name: postgres
     restart: always
@@ -17,7 +17,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/1.sql
 
-  pgadmin:
+  todo-pgadmin:
     image: dpage/pgadmin4:latest
     container_name: pgadmin
     restart: always
@@ -30,7 +30,7 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
     depends_on:
-      - postgres
+      - todo-postgres
 
 volumes:
   pgadmin-data:

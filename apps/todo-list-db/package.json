@@ -2,11 +2,6 @@
   "name": "todo-list-db",
   "version": "0.1.0",
   "private": false,
-  "description": "The Data Base for a Todo List",
-  "author": {
-    "email": "morales.patty.jose@gmail.com",
-    "name": "Tutuma's Team"
-  },
   "license": "MIT",
   "scripts": {
     "dev": "docker compose down && docker volume rm --force todo-list-db_postgres-data && docker compose up -d"

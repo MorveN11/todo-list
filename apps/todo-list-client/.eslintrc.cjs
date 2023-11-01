@@ -1,11 +1,12 @@
 module.exports = {
   root: true,
   ignorePatterns: ['projects/**/*', 'dist/**/*', 'node_modules/**/*'],
-  plugins: ['unused-imports', 'simple-import-sort'],
+  plugins: ['simple-import-sort'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
+    extraFileExtensions: ['.html'],
   },
   env: {
     browser: true,
@@ -15,8 +16,15 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts'],
-      extends: ['airbnb-base', 'airbnb-typescript/base'],
-      plugins: ['@angular-eslint/eslint-plugin', 'tailwindcss', 'prettier'],
+      plugins: ['@typescript-eslint', 'prettier'],
+      extends: [
+        'airbnb-base',
+        'airbnb-typescript/base',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@angular-eslint/recommended',
+        'plugin:@angular-eslint/template/process-inline-templates',
+        'prettier',
+      ],
       rules: {
         'max-len': [
           'error',
@@ -42,16 +50,6 @@ module.exports = {
         'max-len': ['error', 120],
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
-        'unused-imports/no-unused-imports': 'error',
-        'unused-imports/no-unused-vars': [
-          'warn',
-          {
-            vars: 'all',
-            varsIgnorePattern: '^_',
-            args: 'after-used',
-            argsIgnorePattern: '^_',
-          },
-        ],
         '@typescript-eslint/comma-dangle': 'off',
         '@typescript-eslint/lines-between-class-members': 'off',
         '@typescript-eslint/no-shadow': 'error',
@@ -72,6 +70,30 @@ module.exports = {
             style: 'kebab-case',
           },
         ],
+      },
+    },
+    {
+      files: ['*.html'],
+      extends: ['plugin:@angular-eslint/template/recommended', 'plugin:tailwindcss/recommended', 'prettier'],
+      plugins: ['tailwindcss', 'prettier'],
+      rules: {
+        'max-len': [
+          'error',
+          {
+            code: 120,
+            ignoreUrls: true,
+            ignoreStrings: true,
+            ignoreTemplateLiterals: true,
+          },
+        ],
+        quotes: [
+          2,
+          'single',
+          {
+            avoidEscape: true,
+          },
+        ],
+        'prettier/prettier': ['warn', {}, { usePrettierrc: true }],
       },
     },
   ],

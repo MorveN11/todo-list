@@ -32,6 +32,7 @@
   "include": [
     "src/**/*.ts",
     ".eslintrc.cjs",
-    "tailwind.config.js"
+    "tailwind.config.js",
+    "src/**/*.html"
   ]
 }
