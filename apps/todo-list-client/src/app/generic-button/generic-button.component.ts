@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './generic-button.component.html',
 })
 export abstract class InputButtonUnitComponent {
-  title: string = 'save';
+  abstract title: string;
 
-  abstract changeAction(title: string): void;
+  abstract changeAction(): void;
 }
