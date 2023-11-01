@@ -1,0 +1,26 @@
+{
+  "name": "todo-list",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Todo List app built with Turbo",
+  "author": {
+    "email": "morales.patty.jose@gmail.com",
+    "name": "Tutuma's Team"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "turbo dev",
+    "prepare": "husky install",
+    "check:code": "turbo lint -F todo-list-client -F todo-list-api && turbo format -F todo-list-client -F todo-list-api",
+    "build": "turbo build -F todo-list-client -F todo-list-api",
+    "test": "turbo test -F todo-list-client -F todo-list-api",
+    "start": "node apps/todo-list-api/dist/main"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "turbo": "^1.10.16"
+  }
+}

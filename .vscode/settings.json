@@ -1,0 +1,35 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.json, tsconfig.app.json, tsconfig.spec.json, tsconfig.build.json",
+    ".eslintrc.js": ".eslintrc.js, .eslintignore, .prettierrc, .prettierignore",
+    ".eslintrc.cjs": ".eslintrc.cjs, .eslintignore, .prettierrc, .prettierignore",
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[postgres]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+  },
+  "plpgsqlLanguageServer.user": "user",
+  "plpgsqlLanguageServer.password": "password",
+  "plpgsqlLanguageServer.host": "localhost",
+  "plpgsqlLanguageServer.port": 3030,
+  "plpgsqlLanguageServer.database": "llama_gamer_db",
+  "plpgsqlLanguageServer.workspaceValidationTargetFiles": [
+    "**/*.sql",
+    "**/*.pgsql"
+  ],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "editorconfig.generateAuto": false,
+  "editorconfig.template": "default",
+  "jest.autoRun": {
+    "onSave": false,
+    "onType": false
+  },
+}

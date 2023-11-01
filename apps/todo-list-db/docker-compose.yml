@@ -1,0 +1,37 @@
+version: latest
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: todo_list_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      TZ: "UTC-4"
+    ports:
+      - 3030:3030
+    command: -p 3030
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/1.sql
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 4040
+    ports:
+      - 4040:4040
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+volumes:
+  pgadmin-data:
+  postgres-data:
