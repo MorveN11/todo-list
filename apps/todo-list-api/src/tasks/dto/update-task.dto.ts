@@ -3,8 +3,8 @@ import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export default class UpdateTaskDto {
   @ApiProperty()
-  @IsString()
   @IsNotEmpty()
+  @IsString()
   @IsOptional()
   readonly title?: string;
 
