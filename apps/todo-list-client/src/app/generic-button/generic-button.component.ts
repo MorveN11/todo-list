@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-generic-button',
   templateUrl: './generic-button.component.html',
 })
-export abstract class InputButtonUnitComponent {
+export abstract class GenericButtonComponent {
   abstract title: string;
 
-  abstract changeAction(): void;
+  abstract onClick(): void;
 }
