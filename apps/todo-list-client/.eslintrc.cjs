@@ -6,7 +6,6 @@ module.exports = {
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
-    extraFileExtensions: ['.html'],
   },
   env: {
     browser: true,

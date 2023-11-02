@@ -4,8 +4,8 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/**/*.{ts,html} --fix",
-    "format": "prettier --write src/**/*.{ts,html,css}",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.{ts,html}",
     "dev": "ng serve",
     "build": "ng build",
     "test": "jest --coverage"
