@@ -9,4 +9,6 @@ import TasksService from './tasks.service';
   controllers: [TasksController],
   providers: [TasksService, PrismaService],
 })
-export default class TasksModule {}
+class TasksModule {}
+
+export default TasksModule;

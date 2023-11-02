@@ -1,15 +1,29 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
-export default class UpdateTaskDto {
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
+class UpdateTaskDto {
+  @ApiProperty({
+    type: 'string',
+    description: 'The title to update the task',
+  })
+  @IsString({
+    message: 'The task title must be a string',
+  })
+  @IsNotEmpty({
+    message: 'The task title must have at least one character',
+  })
   @IsOptional()
   readonly title?: string;
 
-  @ApiProperty()
-  @IsBoolean()
+  @ApiProperty({
+    type: 'boolean',
+    description: 'The status to update the task',
+  })
+  @IsBoolean({
+    message: 'The task status must be a boolean',
+  })
   @IsOptional()
   readonly completed?: boolean;
 }
+
+export default UpdateTaskDto;

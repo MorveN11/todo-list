@@ -8,7 +8,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "dev": "nest start --watch",
     "build": "nest build",
-    "test": "jest --coverage",
+    "test": "jest --coverage --detectOpenHandles",
     "prisma": "prisma generate && prisma db push --accept-data-loss"
   },
   "dependencies": {

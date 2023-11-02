@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   ignorePatterns: ['.eslintrc.cjs', 'dist', 'node_modules', 'coverage', '.angular', 'projects'],
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', 'jest'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
@@ -13,15 +13,15 @@ module.exports = {
     jest: true,
     node: true,
   },
+  extends: ['plugin:jest/recommended'],
   overrides: [
     {
       files: ['*.ts'],
-      plugins: ['@typescript-eslint', 'jest', 'prettier'],
+      plugins: ['@typescript-eslint', 'prettier'],
       extends: [
         'airbnb-base',
         'airbnb-typescript/base',
         'plugin:@typescript-eslint/recommended',
-        'plugin:jest/recommended',
         'plugin:@angular-eslint/recommended',
         'plugin:@angular-eslint/template/process-inline-templates',
         'prettier',
