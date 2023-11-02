@@ -41,6 +41,12 @@ export default class TasksService {
   }
 
   async remove(id: string) {
-    return `This action removes a #${id} task`;
+    try {
+      return await this.prisma.task.delete({
+        where: {id},
+      });
+    } catch (error) {
+      throw new NotFoundException(`Task with ID ${id} not found`);
+    }
   }
 }
