@@ -8,13 +8,13 @@ import { TaskService } from '@/modules/task/services/task.service';
   templateUrl: './list-manager.component.html',
 })
 export class ListManagerComponent implements OnInit {
-  todoList: Task[] = [];
+  todoList!: Task[];
 
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe((tasks) => {
-      this.todoList = tasks;
+    this.taskService.getTasks().subscribe((todos) => {
+      this.todoList = todos;
     });
   }
 }

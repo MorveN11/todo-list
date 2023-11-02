@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { API_URL } from '@/utils/constants';
 
@@ -14,21 +14,30 @@ import { Task } from '../entities/task.entity';
 export class TaskService {
   private url = `${API_URL}/tasks`;
 
-  constructor(private http: HttpClient) {}
+  private tasksSubject: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([]);
+  private tasks$: Observable<Task[]> = this.tasksSubject.asObservable();
+
+  constructor(private http: HttpClient) {
+    this.loadTasks();
+  }
+
+  private loadTasks(): void {
+    this.http.get<Task[]>(this.url).subscribe((tasks) => {
+      this.tasksSubject.next(tasks);
+    });
+  }
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.url);
+    return this.tasks$;
   }
 
-  getTask(id: string): Observable<Task> {
-    return this.http.get<Task>(`${this.url}/${id}`);
+  createTask(task: CreateTaskDto): void {
+    this.http.post<Task>(this.url, task).subscribe((tsk) => {
+      this.tasksSubject.next([...this.tasksSubject.getValue(), tsk]);
+    });
   }
 
-  createTask(task: CreateTaskDto): Observable<Task> {
-    return this.http.post<Task>(this.url, task);
-  }
-
-  updatedTask(id: string, task: UpdateTaskDto): Observable<Task> {
+  updateTask(id: string, task: UpdateTaskDto): Observable<Task> {
     return this.http.patch<Task>(`${this.url}/${id}`, task);
   }
 

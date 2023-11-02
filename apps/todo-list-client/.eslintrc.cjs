@@ -48,7 +48,6 @@ module.exports = {
         'import/first': 'error',
         'import/newline-after-import': 'error',
         'import/no-duplicates': 'error',
-        'max-len': ['error', 120],
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         '@typescript-eslint/comma-dangle': 'off',
@@ -83,30 +82,6 @@ module.exports = {
             html: 'always',
           },
         ],
-      },
-    },
-    {
-      files: ['*.html'],
-      extends: ['plugin:@angular-eslint/template/recommended', 'plugin:tailwindcss/recommended', 'prettier'],
-      plugins: ['tailwindcss', 'prettier'],
-      rules: {
-        'max-len': [
-          'error',
-          {
-            code: 120,
-            ignoreUrls: true,
-            ignoreStrings: true,
-            ignoreTemplateLiterals: true,
-          },
-        ],
-        quotes: [
-          2,
-          'single',
-          {
-            avoidEscape: true,
-          },
-        ],
-        'prettier/prettier': ['warn', {}, { usePrettierrc: true }],
       },
     },
   ],

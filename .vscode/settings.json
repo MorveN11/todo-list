@@ -35,4 +35,7 @@
     "onType": false
   },
   "jest.jestCommandLine": "npm run test -w todo-list-api -w todo-list-client --",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

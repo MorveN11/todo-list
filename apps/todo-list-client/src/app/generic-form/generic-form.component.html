@@ -1,8 +1,10 @@
-<input
-  [type]="inputType"
-  [(ngModel)]="inputValue"
-  [placeholder]="placeholderText"
-  [required]="isRequired"
-  class="rounded-lg bg-white p-2 shadow-lg"
-/>
-<app-add-button (saveClicked)="onSaveClicked($event)"></app-add-button>
+<div class="mx-10 flex gap-10">
+  <input
+    [type]="inputType"
+    [(ngModel)]="inputValue"
+    [placeholder]="placeholderText"
+    [required]="isRequired"
+    class="w-full rounded-lg bg-white p-2 shadow-lg outline-none"
+  />
+  <app-add-button (saveClicked)="onSaveClicked()"></app-add-button>
+</div>

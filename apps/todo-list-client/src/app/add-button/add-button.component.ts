@@ -11,6 +11,6 @@ export class AddButtonComponent extends GenericButtonComponent {
   @Output() saveClicked: EventEmitter<string> = new EventEmitter<string>();
 
   override onClick(): void {
-    this.saveClicked.emit(this.title);
+    this.saveClicked.emit();
   }
 }

@@ -1,5 +1,5 @@
 <ul>
   <li *ngFor="let todoItem of todoList">
-    {{ todoItem.title }}
+    <app-todo-item [todo]="todoItem" />
   </li>
 </ul>
