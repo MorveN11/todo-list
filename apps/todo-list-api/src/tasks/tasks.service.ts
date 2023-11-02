@@ -30,7 +30,14 @@ export default class TasksService {
   }
 
   async update(id: string, _updateTaskDto: UpdateTaskDto) {
-    return `This action updates a #${id} task`;
+    try {
+      return await this.prisma.task.update({
+        where: { id },
+        data: UpdateTaskDto,
+      });
+    } catch (error) {
+      throw new NotFoundException(`Task with ID ${id} not found`);
+    }
   }
 
   async remove(id: string) {
