@@ -1,18 +1,38 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export default class Task {
-  @ApiProperty()
-  id: number;
+class Task {
+  @ApiProperty({
+    type: 'string',
+    format: 'uuid',
+    description: 'The unique identifier of the task',
+  })
+  id: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: 'string',
+    description: 'The title of the task',
+  })
   title: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: 'boolean',
+    description: 'The status of the task',
+  })
   completed: boolean;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: 'string',
+    format: 'date-time',
+    description: 'The date and time the task was created',
+  })
   createdAt: Date;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: 'string',
+    format: 'date-time',
+    description: 'The date and time the task was updated',
+  })
   updatedAt: Date;
 }
+
+export default Task;

@@ -11,6 +11,11 @@ const config: Config = {
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/coverage/', '/prisma/generated/', '/prisma/migrations/'],
   testEnvironment: 'node',
   collectCoverageFrom: ['src/**/*.ts'],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/src/main.ts',
+    '<rootDir>/src/prisma/prisma.service.ts',
+    '<rootDir>/src/utils/constants.ts',
+  ],
   coverageThreshold: {
     global: {
       statements: 90,
@@ -22,7 +27,7 @@ const config: Config = {
   moduleDirectories: ['src', 'node_modules'],
   moduleFileExtensions: ['js', 'json', 'ts'],
   moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1',
+    '@/(.*)$': '<rootDir>/src/$1',
   },
   rootDir: '.',
 };

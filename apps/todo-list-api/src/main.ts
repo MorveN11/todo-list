@@ -3,25 +3,19 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 import AppModule from './app.module';
+import { DESCRIPTION, PORT, PREFIX, TITLE, VERSION } from './utils/constants';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
-  const config = new DocumentBuilder()
-    .setTitle('Todo List API')
-    .setDescription(
-      'The Todo List API for the 4th semester of the Software Engineering course at the Salesiana University of Bolivia.'
-    )
-    .setVersion('1.0')
-    .build();
+  const config = new DocumentBuilder().setTitle(TITLE).setDescription(DESCRIPTION).setVersion(VERSION).build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup(PREFIX, app, document);
 
-  app.setGlobalPrefix('/api');
-  app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
+  app.setGlobalPrefix(PREFIX);
+  app.enableCors();
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(PORT);
 }
 
 bootstrap().catch((err: Error) => {
