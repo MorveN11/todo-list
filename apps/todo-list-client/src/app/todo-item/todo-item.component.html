@@ -1,8 +1,21 @@
 <section class="flex w-full place-items-center justify-between overflow-auto border-b-2 border-b-gray-700/20 py-6">
-  <h3>{{ todo.title }}</h3>
+  <ng-container *ngIf="!isEditing; else editMode">
+    <h3 (click)="startEditing()">{{ todo.title }}</h3>
+  </ng-container>
+  <ng-template #editMode>
+    <input
+      type="text"
+      [(ngModel)]="editedTitle"
+      (blur)="saveTitle()"
+      (keyup.enter)="saveTitle()"
+      placeholder="Edit Title"
+    />
+  </ng-template>
   <div class="mr-5 flex place-content-center gap-x-10">
     <app-edit-button />
     <app-delete-button (click)="onDeleteClick()"></app-delete-button>
+    <app-edit-button (saveClicked)="startEditing()"/>
+    <app-delete-button />
     <app-check-box-button />
   </div>
 </section>
