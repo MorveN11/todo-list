@@ -3,7 +3,7 @@
 
 bun install
 bun run up
-bun run prisma
+bun run prisma:development
 bun run check:code
 bun run test
-bun run build
+bun run build:development

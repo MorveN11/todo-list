@@ -13,7 +13,10 @@
     "test": {
       "cache": false
     },
-    "prisma": {
+    "prisma:development": {
+      "cache": false
+    },
+    "prisma:production": {
       "cache": false
     },
     "start": {

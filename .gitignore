@@ -56,3 +56,7 @@ lerna-debug.log*
 
 ## Prisma
 migrations
+
+## Railway
+
+.nixpacks

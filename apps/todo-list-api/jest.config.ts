@@ -10,7 +10,7 @@ const config: Config = {
   coverageProvider: 'v8',
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/coverage/', '/prisma/generated/', '/prisma/migrations/'],
   testEnvironment: 'node',
-  collectCoverageFrom: ['src/**/*.ts'],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.module.ts'],
   coveragePathIgnorePatterns: [
     '<rootDir>/src/main.ts',
     '<rootDir>/src/prisma/prisma.service.ts',

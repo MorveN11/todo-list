@@ -9,7 +9,8 @@
     "dev": "nest start --watch",
     "build": "nest build",
     "test": "jest --coverage --detectOpenHandles",
-    "prisma": "prisma generate && prisma db push"
+    "prisma:development": "dotenv -e .env.development -- prisma generate && dotenv -e .env.development prisma db push",
+    "prisma:production": "dotenv -e .env -- prisma generate && dotenv -e .env prisma db push"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -20,6 +21,7 @@
     "@prisma/client": "^5.5.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "dotenv-cli": "^7.3.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
