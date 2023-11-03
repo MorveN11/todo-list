@@ -10,6 +10,9 @@ import { TaskService } from '@/modules/task/services/task.service';
 export class TodoItemComponent {
   constructor(private taskService: TaskService) {}
 
+  isEditing: boolean = false;
+  editedTitle: string = '';
+
   @Input() todo!: Task;
   @Output() deleteClicked: EventEmitter<string> = new EventEmitter<string>();
   @Output() titleChanged: EventEmitter<string> = new EventEmitter<string>();
@@ -17,9 +20,6 @@ export class TodoItemComponent {
   onDeleteClick(): void {
     this.deleteClicked.emit(this.todo.id);
   }
-
-  isEditing: boolean = false;
-  editedTitle: string = '';
 
   startEditing() {
     this.isEditing = true;

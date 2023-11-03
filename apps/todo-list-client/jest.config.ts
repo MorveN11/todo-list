@@ -10,6 +10,7 @@ const config: Config = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/coverage/', '/.angular/'],
   collectCoverageFrom: ['src/app/**/*.ts'],
+  coveragePathIgnorePatterns: ['<rootDir>/src/main.ts', '<rootDir>/src/app/utils/constants.ts'],
   coverageThreshold: {
     global: {
       statements: 90,
