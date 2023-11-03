@@ -15,6 +15,7 @@ services:
     command: -p 3030
     volumes:
       - postgres-data-pro:/var/lib/postgresql/data
+      - ./scripts/init.pgsql:/docker-entrypoint-initdb.d/1.sql
 
   pgadmin:
     image: dpage/pgadmin4:latest

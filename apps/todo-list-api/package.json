@@ -9,7 +9,7 @@
     "dev": "nest start --watch",
     "build": "nest build",
     "test": "jest --coverage --detectOpenHandles",
-    "prisma": "prisma generate && prisma db push --accept-data-loss"
+    "prisma": "prisma generate && prisma db push"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

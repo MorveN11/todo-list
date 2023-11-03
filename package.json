@@ -9,7 +9,7 @@
     "check:code": "turbo lint -F todo-list-client -F todo-list-api && turbo format -F todo-list-client -F todo-list-api",
     "build": "turbo build -F todo-list-client -F todo-list-api",
     "test": "turbo test -F todo-list-client -F todo-list-api",
-    "start": "turbo start -F todo-list-db && node apps/todo-list-api/dist/main",
+    "start": "turbo start -F todo-list-db && turbo prisma -F todo-list-api && node apps/todo-list-api/dist/src/main",
     "prisma": "turbo prisma -F todo-list-api",
     "up": "turbo dev -F todo-list-db"
   },

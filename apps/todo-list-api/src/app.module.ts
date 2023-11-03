@@ -7,7 +7,7 @@ import TasksModule from './tasks/tasks.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../todo-list-client/dist/todo-list-client'),
+      rootPath: join(__dirname, '../../../todo-list-client/dist/todo-list-client'),
     }),
     TasksModule,
   ],
