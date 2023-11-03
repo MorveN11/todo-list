@@ -14,6 +14,6 @@
   <div class="mr-5 flex place-content-center gap-x-10">
     <app-delete-button (click)="onDeleteClick()"></app-delete-button>
     <app-edit-button (saveClicked)="startEditing()"/>
-    <app-check-box-button />
+    <app-check-box-button (click)="onUpdateClick()" [isChecked]="todo.completed" />
   </div>
 </section>

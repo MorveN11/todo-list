@@ -23,4 +23,26 @@ export class ListManagerComponent implements OnInit {
       this.todoList = this.todoList.filter((task) => task.id !== taskId);
     });
   }
+
+  onUpdateTask(task: Task): void {
+    this.taskService.updateTask(task.id, { title: task.title, completed: task.completed }).subscribe((updatedTask) => {
+      this.todoList = this.todoList.map((tsk) => {
+        if (tsk.id === updatedTask.id) {
+          return { ...tsk, ...updatedTask };
+        }
+        return { ...tsk };
+      });
+    });
+  }
+
+  onToggleTask(task: Task): void {
+    this.taskService.updateTask(task.id, { title: task.title, completed: !task.completed }).subscribe((updatedTask) => {
+      this.todoList = this.todoList.map((tsk) => {
+        if (tsk.id === updatedTask.id) {
+          return { ...tsk, ...updatedTask };
+        }
+        return { ...tsk };
+      });
+    });
+  }
 }
