@@ -21,5 +21,6 @@ export class GenericFormComponent {
 
   onSaveClicked() {
     this.taskService.createTask({ title: this.inputValue });
+    this.inputValue = '';
   }
 }

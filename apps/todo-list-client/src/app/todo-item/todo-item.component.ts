@@ -16,6 +16,7 @@ export class TodoItemComponent {
   @Input() todo!: Task;
   @Output() deleteClicked: EventEmitter<string> = new EventEmitter<string>();
   @Output() titleChanged: EventEmitter<string> = new EventEmitter<string>();
+  @Output() updateClicked: EventEmitter<Task> = new EventEmitter<Task>();
 
   onDeleteClick(): void {
     this.deleteClicked.emit(this.todo.id);
@@ -34,5 +35,9 @@ export class TodoItemComponent {
         this.titleChanged.emit(this.editedTitle);
       });
     }
+  }
+
+  onUpdateClick(): void {
+    this.updateClicked.emit(this.todo);
   }
 }
