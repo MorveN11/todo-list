@@ -17,4 +17,10 @@ export class ListManagerComponent implements OnInit {
       this.todoList = todos;
     });
   }
+
+  onDeleteTask(taskId: string): void {
+    this.taskService.deleteTask(taskId).subscribe(() => {
+      this.todoList = this.todoList.filter((task) => task.id !== taskId);
+    });
+  }
 }
