@@ -12,7 +12,7 @@ import { Task } from '../entities/task.entity';
   providedIn: 'root',
 })
 export class TaskService {
-  private url = `${API_URL}/tasks`;
+  url = `${API_URL}/tasks`;
 
   private tasksSubject: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([]);
   private tasks$: Observable<Task[]> = this.tasksSubject.asObservable();

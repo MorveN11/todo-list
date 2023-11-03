@@ -8,7 +8,7 @@
     "format": "prettier --write src/**/*.{ts,html}",
     "dev": "ng serve",
     "build": "ng build",
-    "test": "jest --coverage"
+    "test": "jest --coverage --detectOpenHandles"
   },
   "dependencies": {
     "@angular/animations": "^16.2.0",
