@@ -17,7 +17,11 @@ class TasksService {
   }
 
   async findAll(): Promise<Task[]> {
-    return this.prisma.task.findMany();
+    return this.prisma.task.findMany({
+      orderBy: {
+        createdAt: 'asc',
+      },
+    });
   }
 
   async findOne(id: string): Promise<Task> {

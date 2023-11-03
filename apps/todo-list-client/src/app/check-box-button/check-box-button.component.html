@@ -4,16 +4,16 @@
       type="button"
       class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity hover:before:opacity-10"
       [ngClass]="{
-        'border-blue-500 bg-blue-500 before:bg-blue-500': isChecked === true,
-        'bg-gray-400': isChecked === false
+        'border-blue-500 bg-blue-500 before:bg-blue-500': todo.completed === true,
+        'bg-gray-400': todo.completed === false
       }"
-      id="checkbox-8"
+      id="{{ todo.id }}"
       (click)="onClick()"
     ></button>
 
     <div
       class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity"
-      [ngClass]="{ 'opacity-100': isChecked === true }"
+      [ngClass]="{ 'opacity-100': todo.completed }"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
