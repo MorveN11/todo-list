@@ -10,7 +10,7 @@
     "build": "nest build",
     "test": "jest --coverage --detectOpenHandles",
     "prisma:development": "DATABASE_URL=\"postgresql://user:password@localhost:3030/todo_list_db\" prisma generate && DATABASE_URL=\"postgresql://user:password@localhost:3030/todo_list_db\" prisma db push",
-    "prisma:production": "prisma generate && dotenv -e .env.production prisma db push"
+    "prisma:production": "prisma generate && prisma db push"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
