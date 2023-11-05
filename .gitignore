@@ -58,5 +58,8 @@ lerna-debug.log*
 migrations
 
 ## Railway
-
 .nixpacks
+
+# Enviroments
+.env
+
