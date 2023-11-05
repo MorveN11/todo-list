@@ -11,8 +11,6 @@
     "up": "turbo dev -F todo-list-db",
     "build:development": "turbo prisma:development -F todo-list-api && turbo build -F todo-list-client -F todo-list-api",
     "build:production": "turbo prisma:production -F todo-list-api && turbo build -F todo-list-client -F todo-list-api",
-    "prisma:development": "turbo prisma:development -F todo-list-api",
-    "prisma:production": "turbo prisma:production -F todo-list-api",
     "start": "node apps/todo-list-api/dist/src/main"
   },
   "workspaces": [
