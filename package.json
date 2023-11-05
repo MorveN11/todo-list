@@ -19,5 +19,8 @@
   "devDependencies": {
     "husky": "^8.0.3",
     "turbo": "^1.10.16"
+  },
+  "prisma": {
+    "schema": "./apps/todo-list-api/prisma/schema.prisma"
   }
 }
